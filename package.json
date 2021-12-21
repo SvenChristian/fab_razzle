@@ -1,0 +1,27 @@
+{
+  "name": "razzle-examples-with-afterjs",
+  "version": "2.4.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "razzle start",
+    "build": "razzle build",
+    "test": "razzle test --env=jsdom",
+    "start:prod": "NODE_ENV=production node build/server.js",
+    "prebuild:fab": "fab-afterjs setup",
+    "build:fab": "PUBLIC_PATH='/_assets/' npm run build && fab-afterjs build",
+    "postbuild:fab": "fab-afterjs teardown",
+    "fab:e2e": "npm run build:fab && fab-serve fab.zip"
+  },
+  "dependencies": {
+    "@fab/afterjs": "^0.1.2",
+    "@fab/serve": "^0.1.0",
+    "@jaredpalmer/after": "latest",
+    "express": "^4.16.2",
+    "razzle": "^2.4.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-helmet": "^5.2.0",
+    "react-router-dom": "^4.2.2",
+    "styled-components": "^4.1.2"
+  }
+}
